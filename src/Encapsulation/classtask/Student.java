@@ -1,4 +1,4 @@
-package encapsulation.classtask;
+package Encapsulation.classtask;
 
 public class Student {
     private String name;

@@ -1,4 +1,4 @@
-package inheritance.classtask;
+package Inheritance.classtask;
 
 public class Song extends Media {
     String performer;

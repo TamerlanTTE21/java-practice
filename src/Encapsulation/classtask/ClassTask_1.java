@@ -1,4 +1,4 @@
-package encapsulation.classtask;
+package Encapsulation.classtask;
 
 public class ClassTask_1 {
     public static void main(String[] args) {

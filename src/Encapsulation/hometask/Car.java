@@ -1,4 +1,4 @@
-package encapsulation.hometask;
+package Encapsulation.hometask;
 
 public class Car {
     private String make;
