@@ -1,4 +1,4 @@
-package Hashtables;
+package Hashtables.hometask;
 
 import java.util.ArrayList;
 import java.util.HashMap;

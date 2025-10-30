@@ -1,4 +1,4 @@
-package inheritance;
+package inheritance.classtask;
 
 public class Movie extends Media {
     int rating;

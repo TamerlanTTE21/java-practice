@@ -1,4 +1,4 @@
-package inheritance;
+package inheritance.classtask;
 
 public class Media {
     String name;

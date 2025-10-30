@@ -1,4 +1,4 @@
-package Hashtables;
+package Hashtables.hometask;
 
 import java.util.HashMap;
 import java.util.Scanner;
@@ -24,7 +24,6 @@ public class Hometask_1 {
                 System.out.println("Такой команды нет");
             }
         }
-
     }
 
     static void printMenu() {
