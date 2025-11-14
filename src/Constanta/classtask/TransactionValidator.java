@@ -1,4 +1,4 @@
-package Constanta.classtast;
+package Constanta.classtask;
 
 public class TransactionValidator {
     // объявите константы

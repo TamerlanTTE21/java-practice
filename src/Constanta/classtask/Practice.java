@@ -1,4 +1,4 @@
-package Constanta.classtast;
+package Constanta.classtask;
 import java.util.Scanner;
 
 public class Practice {

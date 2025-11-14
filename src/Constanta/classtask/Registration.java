@@ -1,4 +1,4 @@
-package Constanta.classtast;
+package Constanta.classtask;
 
     public class Registration {
         public static final int PHONE_LENGTH = 11;
