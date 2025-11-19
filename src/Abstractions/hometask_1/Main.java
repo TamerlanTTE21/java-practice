@@ -21,6 +21,5 @@ public class Main {
             Spider spider = new Spider("__");
             System.out.println("У паука " + spider.getPawsCount() + "лапок.");
         }
-
     }
 }
