@@ -1,4 +1,4 @@
-package Polymorphism.classtask;
+package Polymorphism.classtask_1;
 
 public class AgeValidationRule extends ValidationRule<Byte> {
     public AgeValidationRule(Byte age) {

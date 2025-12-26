@@ -1,4 +1,4 @@
-package Polymorphism.classtask;
+package Polymorphism.classtask_1;
 
 public class EmploymentValidationRule extends ValidationRule<Boolean> {
     public EmploymentValidationRule(Boolean value) {

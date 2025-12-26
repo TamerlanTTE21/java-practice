@@ -1,4 +1,4 @@
-package Polymorphism.classtask;
+package Polymorphism.classtask_1;
 
 public class MortgageRequest {
     private final String name;

@@ -1,4 +1,4 @@
-package Polymorphism.classtask;
+package Polymorphism.classtask_1;
 
 public abstract class ValidationRule<T> {
     protected final T value;

@@ -1,4 +1,4 @@
-package Polymorphism.classtask;
+package Polymorphism.classtask_1;
 
 public class MortgageAmountValidationRule extends ValidationRule<Integer> {
     public MortgageAmountValidationRule(Integer value) {

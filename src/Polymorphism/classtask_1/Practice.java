@@ -1,4 +1,4 @@
-package Polymorphism.classtask;
+package Polymorphism.classtask_1;
 
 import java.util.Scanner;
 
@@ -26,5 +26,4 @@ public class Practice {
         mortgageRequest.validate();
 
     }
-
 }
