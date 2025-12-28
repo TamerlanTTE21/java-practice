@@ -7,9 +7,11 @@ public class Practice {
     public static void main(String[] args) {
         Set<Ticket> tickets = new HashSet<>();
         fillTickets(tickets);
+        TicketPriceInUsdComparator priceInUsdComparator = new TicketPriceInUsdComparator();
 
         System.out.println("Доступные билеты: ");
         for (Ticket ticket : tickets) {
+            tickets.stream().sorted(priceInUsdComparator);
             System.out.println("  * " + ticket);
         }
     }
