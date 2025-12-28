@@ -1,7 +1,5 @@
 package Comparator.hometask_1;
 
-
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -29,30 +27,45 @@ public class Main {
             int field = scanner.nextInt();
             if (field == 1) {
                 products.sort(nameComparator);
-                System.out.println(products);
+                System.out.println("1. по возрастанию");
+                System.out.println("2. по убыванию");
+                int order = scanner.nextInt();
+                if (order == 1) {
+                    products.sort(nameComparator);
+                    System.out.println(products);
+                } else if (order == 2) {
+                    products.sort(nameComparator.reversed());
+                    System.out.println(products);
+                }
+
             } else if (field == 2) {
                 products.sort(priceComparator);
-                System.out.println(products);
+                System.out.println("1. по возрастанию");
+                System.out.println("2. по убыванию");
+                int order = scanner.nextInt();
+                if (order == 1) {
+                    products.sort(priceComparator);
+                    System.out.println(products);
+                } else if (order == 2) {
+                    products.sort(priceComparator.reversed());
+                    System.out.println(products);
+                }
             } else if (field == 3) {
                 products.sort(popularityComparator);
-                System.out.println(products);
+                System.out.println("1. по возрастанию");
+                System.out.println("2. по убыванию");
+                int order = scanner.nextInt();
+                if (order == 1) {
+                    products.sort(popularityComparator);
+                    System.out.println(products);
+                } else if (order == 2) {
+                    products.sort(popularityComparator.reversed());
+                    System.out.println(products);
+                }
             } else {
                 System.out.println("Incorrect command");
             }
-
-
-            System.out.println("1. по возрастанию");
-            System.out.println("2. по убыванию");
-            int order = scanner.nextInt();
-            if (order == 1) {
-                products.sort(nameComparator);
-            } else if (order == 2) {
-                products.sort(nameComparator.reversed());
-            }
-
-            // сортировка
-
-            // распечатка списка
+            break;
         }
     }
 }
