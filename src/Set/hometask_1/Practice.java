@@ -1,4 +1,4 @@
-package HashSet.hometask_1;
+package Set.hometask_1;
 
 import java.util.HashSet;
 import java.util.Set;
