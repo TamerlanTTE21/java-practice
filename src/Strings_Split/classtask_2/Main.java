@@ -12,6 +12,10 @@ public class Main {
 // 6. Июнь
 //...
         String[] arr = months.split("\\+");
+
+
+
+
         int index = 0;
         for (String str : arr) {
             index ++;
