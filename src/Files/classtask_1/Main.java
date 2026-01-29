@@ -1,4 +1,4 @@
-package files.classtask_1;
+package Files.classtask_1;
 
 import java.io.IOException;
 import java.nio.file.Files;
