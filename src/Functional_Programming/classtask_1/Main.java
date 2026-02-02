@@ -11,8 +11,6 @@ public class Main {
         String result = wordEditor.operation("heLLO");
         System.out.println(result);
 
-
-
     }
 }
 interface WordEditor {
