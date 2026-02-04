@@ -1,4 +1,4 @@
-package Functional_Programming.CT_2;
+package Functional_Programming.classtask_2;
 
 public class Main {
     public static void main(String[] args) {
