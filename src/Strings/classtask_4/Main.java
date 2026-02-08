@@ -15,15 +15,12 @@ public class Main {
         StringBuilder result = new StringBuilder("Мои друзья: ");
         int index = 0;
         for (User user : users) {
-            index ++;
+            index++;
             result.append(user.name);
 
             if (index != users.size()) {
-                result.append(", " );
+                result.append(", ");
             }
-
-
-
         }
         System.out.println(result);
     }
