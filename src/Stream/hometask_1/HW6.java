@@ -8,7 +8,6 @@ public class HW6 {
 
         List<String> names = Arrays.asList("Иван Иванов", "Алина Петрова", "Ксения Сидорова", "Дмитрий Кузнецов");
         List<String> result = names.stream()
-                .filter(x -> !x.isEmpty())
                 .map(x -> x.substring(0,1).toUpperCase())
                 .toList();
         System.out.println(result);
