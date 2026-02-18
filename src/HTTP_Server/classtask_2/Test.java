@@ -1,4 +1,4 @@
-package HTTP.classtask_1;
+package HTTP_Server.classtask_2;
 
 import com.sun.net.httpserver.HttpServer;
 
@@ -8,7 +8,7 @@ import java.net.InetSocketAddress;
 public class Test {
     public static void main(String[] args) throws IOException {
         HttpServer server = HttpServer.create(new InetSocketAddress(8080), 0);
-        server.createContext("/hello", new HelloHandler());
+        server.createContext("/calculate", new HelloHandler());
         server.start();
 
     }

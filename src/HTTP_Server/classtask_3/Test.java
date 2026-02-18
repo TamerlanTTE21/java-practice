@@ -1,4 +1,4 @@
-package HTTP.classtask_3;
+package HTTP_Server.classtask_3;
 
 import com.sun.net.httpserver.HttpServer;
 

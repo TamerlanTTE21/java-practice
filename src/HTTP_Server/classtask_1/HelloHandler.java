@@ -1,4 +1,4 @@
-package HTTP.classtask_1;
+package HTTP_Server.classtask_1;
 
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
