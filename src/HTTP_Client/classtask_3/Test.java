@@ -1,5 +1,6 @@
-package HTTP_Client.hometask_1;
+package HTTP_Client.classtask_3;
 
+import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
@@ -9,15 +10,12 @@ import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
-import java.util.Scanner;
 
 public class Test {
     public static void main(String[] args) throws IOException, InterruptedException {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Введите валюту: ");
-        String currency = scanner.nextLine();
+
         HttpClient httpClient = HttpClient.newHttpClient();
-        String url = "https://api.apilayer.com/exchangerates_data/latest?base=USD&symbols=KZT&apikey=iISN69jOgAmSSuWq5GG68tko23CuqMLk";
+        String url = "https://swapi.nomoreparties.co/people";
 
         // Описание запроса
         HttpRequest request = HttpRequest.newBuilder()
@@ -30,19 +28,25 @@ public class Test {
         if (response.statusCode() == 200) {
             System.out.println(response.statusCode());
 
-            JsonElement jsonElement = JsonParser.parseString(response.body());
-            JsonObject jsonObject = jsonElement.getAsJsonObject();
+            JsonObject jsonObject = JsonParser.parseString(response.body()).getAsJsonObject();
+            JsonArray array = jsonObject.get("results").getAsJsonArray();
 
-            JsonObject main = jsonObject.get("base").getAsJsonObject();
-            int cur = main.get(currency).getAsInt();
+            int max = 0;
+            String name = "";
 
-            JsonObject main2 = jsonObject.get("rates").getAsJsonObject();
-            int KZT = main2.get("KZT").getAsInt();
+            for (JsonElement element : array) {
 
-            System.out.println("Валюта: " + cur);
-            System.out.println("KZT: " + KZT);
+                JsonObject character = element.getAsJsonObject();
+                int temp = character.get("height").getAsInt();
+                String name1 = character.get("name").getAsString();
+                if (max < temp) {
+                    max = temp;
+                    name = name1;
+                }
+            }
+            System.out.println(name);
         } else {
-            System.out.println("Валюта не найдена");
+            System.out.println("dfgd");
         }
     }
 }
