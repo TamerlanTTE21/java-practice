@@ -14,10 +14,15 @@ import java.util.Scanner;
 public class Test {
     public static void main(String[] args) throws IOException, InterruptedException {
         Scanner scanner = new Scanner(System.in);
+
         System.out.println("Введите валюту: ");
         String currency = scanner.nextLine();
+
+        System.out.println("Введите суммму в тг: ");
+        int tenge = scanner.nextInt();
+
         HttpClient httpClient = HttpClient.newHttpClient();
-        String url = "https://api.apilayer.com/exchangerates_data/latest?base=USD&symbols=KZT&apikey=iISN69jOgAmSSuWq5GG68tko23CuqMLk";
+        String url = "https://api.apilayer.com/exchangerates_data/latest?base=" + currency + "&symbols=KZT&apikey=iISN69jOgAmSSuWq5GG68tko23CuqMLk";
 
         // Описание запроса
         HttpRequest request = HttpRequest.newBuilder()
@@ -30,17 +35,20 @@ public class Test {
         if (response.statusCode() == 200) {
             System.out.println(response.statusCode());
 
+
             JsonElement jsonElement = JsonParser.parseString(response.body());
             JsonObject jsonObject = jsonElement.getAsJsonObject();
 
-            JsonObject main = jsonObject.get("base").getAsJsonObject();
-            int cur = main.get(currency).getAsInt();
+            String cur = jsonObject.get("base").getAsString();
+
 
             JsonObject main2 = jsonObject.get("rates").getAsJsonObject();
-            int KZT = main2.get("KZT").getAsInt();
+            double KZT = main2.get("KZT").getAsDouble();
+
+            double result = tenge / KZT;
 
             System.out.println("Валюта: " + cur);
-            System.out.println("KZT: " + KZT);
+            System.out.println(tenge + "тг в " + currency + " составляет: " + result);
         } else {
             System.out.println("Валюта не найдена");
         }
