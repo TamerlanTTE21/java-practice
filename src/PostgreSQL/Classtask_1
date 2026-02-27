@@ -1,0 +1,59 @@
+
+--DDL - Data Definition Language
+create table developers(
+    --названия тип ограничения
+    id serial,
+    name varchar(100),
+    job varchar(100),
+    salary double precision,
+    started_date date
+);
+
+-- CRUD
+    --Create - insert
+    --Read - select
+    --Update - update
+    --Delete - delete
+
+    -- DML - data Manipulation Language
+
+--Создание
+insert into developers (name, job, salary, started_date) values ('Jack', 'Php', 4270.2, '2018-02-22');
+
+insert into developers (name, job, salary, started_date) values ('Allen', 'Swift', 6490.2, '2020-07-18');
+
+insert into developers (name, job) values ('Bob', 'Kotlin');
+-- Обновление
+update developers set salary = 4700 where id = 1;
+
+update developers set salary = developers.salary + 200 where id = 1 or id = 2;
+
+--Удаление
+delete from developers where id = 4;
+
+--Чтение
+select  * from  developers;
+
+select  name from  developers;
+
+select  'Имя: ' || name, job from  developers;
+
+select  name, job, salary * 0.8 from  developers;
+
+
+create table tasks(
+    id serial,
+    title varchar(100),
+    status varchar(100),
+    priority int
+);
+
+insert into tasks (title, status, priority) values ('Изучить SQL', 'NEW', 5);
+insert into tasks (title, status, priority) values ('Сделать проект', 'IN_PROGRESS', 4);
+insert into tasks (title, status, priority) values ('Почитать книгу', 'DONE', 2);
+
+update tasks set status = 'IN_PROGRESS' where id = 1;
+update tasks set priority = priority +1 where status = 'IN_PROGRESS'  and priority < 5;
+update tasks set title = 'Изучаем Java' where title = 'Почитать книгу';
+
+delete from tasks where status = 'DONE';
