@@ -57,3 +57,5 @@ update tasks set priority = priority +1 where status = 'IN_PROGRESS'  and priori
 update tasks set title = 'Изучаем Java' where title = 'Почитать книгу';
 
 delete from tasks where status = 'DONE';
+
+sel
