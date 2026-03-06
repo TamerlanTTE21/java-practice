@@ -1,0 +1,44 @@
+create table users
+(
+	id serial primary key,
+	login varchar(100) not null
+);
+
+create table posts
+(
+	id serial primary key,
+	decription varchar(1000) not null,
+	likes_count int default 0,
+	author_id int references users(id) not null
+);
+
+create table comments
+(
+	id serial primary key,
+	text varchar(100) not null,
+	author_id int references users(id) not null,
+	post_id int references posts(id) not null
+);
+
+insert into users (login)
+values ('bob'), --1
+       ('mike'); --2
+
+insert into posts (decription, author_id)
+values ('java', 1),   -- 1
+	   ('php', 1),   -- 2
+	 ('c++', 2);  -- 3
+
+insert into comments (text, author_id, post_id)
+values ('hello world', 2, 1),
+		('iijfew', 2, 2),
+		('wjufgi', 1,1);
+
+insert into comments (text, author_id, post_id)
+values ('new comment', 2, 1);
+
+select users.id, users.login, posts.decription from posts
+join users on users.id = posts.id;
+
+select posts.id, posts.decription, comments.text from comments
+join posts on posts.id = comments.post_id;
