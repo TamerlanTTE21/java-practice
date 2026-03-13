@@ -1,4 +1,4 @@
-package Hashtables.hometask;
+package Hashtables.hometask_1;
 
 import java.util.HashMap;
 import java.util.Scanner;
