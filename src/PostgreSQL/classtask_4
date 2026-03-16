@@ -1,0 +1,92 @@
+create table films
+(
+	id serial primary  key,
+	name varchar(100) not null,
+	rating double precision not null,
+	release_year int not null
+);
+
+create table genres
+(
+	id serial primary key,
+	name varchar(100) not null
+);
+
+create table actors
+(
+	id serial primary key,
+	name varchar(100) not null,
+	gender varchar (7) not null
+);
+
+
+create table films_genres
+(
+genre_id integer references genres(id),
+film_id integer references films(id),
+	primary key(genre_id, film_id)
+);
+
+create table actors_films
+(
+film_id integer references films(id),
+actor_id integer references actors(id),
+	primary key(film_id, actor_id)
+);
+
+insert into genres (name)
+values ('Action'),
+('Drama'),
+('Sci-Fi'),
+('Crime'),
+('Thriller'),
+('Adventure');
+
+insert into films (name, rating, release_year)
+values ('Inception', 8.8, 2010),
+('The Dark Knight', 9.0, 2008),
+('Once Upon a Time in Hollywood', 7.6, 2019),
+('Interstellar', 8.6, 2014),
+('Fight Club', 8.8, 1999);
+
+insert into films_genres (film_id, genre_id)
+values (1, 1),
+ (1, 3),
+ (1, 5),
+ (2, 1),
+ (2, 2),
+ (3, 2),
+ (4, 2),
+ (4, 3),
+ (4, 6),
+ (5, 2),
+ (5, 5);
+
+insert into actors (name, gender)
+values ('Leonardo DiCaprio', 'male'),
+('Christian Bale', 'male'),
+('Matther McConaughey', 'male'),
+('Brad Pitt', 'male'),
+('Edward Norton', 'male'),
+('Anne Hathaway', 'female');
+
+insert into actors_films (actor_id, film_id)
+values (1, 1),
+ (1, 3),
+ (2, 2),
+ (3, 4),
+ (4, 3),
+ (4, 5),
+ (5, 5),
+ (6, 2),
+ (6, 4);
+
+select films.name,
+genres.name,
+films.rating,
+films.release_year
+from films
+join films_genres on films.id = films_genres.film_id
+join genres on genres.id = films_genres.genre_id;
+
+
