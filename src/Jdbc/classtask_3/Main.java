@@ -18,14 +18,14 @@ public class Main {
 
         Connection connection = DriverManager.getConnection(url, user, password);
 
-        if (newUser != users.login) {
-            String sql = "insert into users (login) values (?)";
-            PreparedStatement ps = connection.prepareStatement(sql);
-            ps.setString(1, newUser);
-            ps.executeUpdate();
-            System.out.println("Пользователь создан");
-        } else {
-            System.out.println("Пользователь не создан");
-        }
+//        if (newUser != users.login) {
+//            String sql = "insert into users (login) values (?)";
+//            PreparedStatement ps = connection.prepareStatement(sql);
+//            ps.setString(1, newUser);
+//            ps.executeUpdate();
+//            System.out.println("Пользователь создан");
+//        } else {
+//            System.out.println("Пользователь не создан");
+//        }
     }
 }
